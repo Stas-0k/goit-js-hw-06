@@ -1,9 +1,11 @@
-const rangeControl = document.querySelector('#font-size-control')
-const font = document.querySelector('#text')
+let rangeControl = document.querySelector('#font-size-control')
+let font = document.querySelector('#text')
 
-const controler = () => { 
-    rangeControl.value
-}
+font.style.fontSize = `${rangeControl.value}px`;
+
+ const controler = () => { 
+     font.style.fontSize = `${rangeControl.value}px`;
+ }
     
     
 rangeControl.addEventListener("input", controler)
@@ -12,4 +14,4 @@ rangeControl.addEventListener("input", controler)
 
 
 
-console.log(rangeControl.value);
+
