@@ -18,15 +18,18 @@ const images = [
 const total = document.querySelector('ul.gallery');
 
 
-for (let i = 0; i < images.length; i++) { 
-  const list = document.createElement('li')
-  total.prepend(list);
-  const image = document.createElement('img') 
-  list.insertAdjacentElement("afterbegin", image);
-  image.setAttribute("src", images[i].url)
-  image.setAttribute("alt", images[i].alt)
-  
-  console.log(image)
-}
+// for (let i = 0; i < images.length; i++) { 
+//   const list = document.createElement('li')
+//   total.prepend(list);
+//   const image = document.createElement('img') 
+//   list.insertAdjacentElement("afterbegin", image);
+//   image.setAttribute("src", images[i].url)
+//   image.setAttribute("alt", images[i].alt)  
+//   console.log(image)
+// }
 
+const itemImage = images.reduce((total, image) => { 
+  return total+=`<li><img src="${image.url}" alt="${image.alt}"></li>`
+}, '')
 
+total.insertAdjacentHTML("beforeend",itemImage)
